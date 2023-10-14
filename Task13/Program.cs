@@ -23,7 +23,7 @@ while(number > 1)
     int number1 = number % 10;
     number = number / 10;
     Console.WriteLine(number1);
-    int[] array = new int[] {};
+    int[] array = new int[3];           // Создаем массив чисел с длиной 3
     array = new int[array.Length + 1];
     int index = 0;
     array[index] = number1;
