@@ -6,28 +6,13 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-
-
-int ReadInt(string msg)  				// Объявляем функцию ReadInt с параметром msg
+Console.WriteLine("Введите число: ");       // Выводим сообщение пользователю
+string number = Console.ReadLine();         //Считываем введенную пользователем информацию и записываем в переменную {number}
+if (number.Length < 3)                      // Если длина массива {number} меньше 3 -> вычисления не производим
 {
-    Console.WriteLine(msg);  			// Выводим сообщение "Введите число: "
-    string numb = Console.ReadLine();	// Считываем введенную пользователем информацию и записываем в переменную
-    int number;							// Объявляем числовую переменную
-    number = int.Parse(numb);			// Преобразовываем строковую переменную в числовую
-    return number;						// Возвращаем результат
+    Console.WriteLine($"Третьей цифры в числе {number} нет");
 }
-int number = ReadInt("Введите число: ");
-
-while(number > 1)
+else
 {
-    int number1 = number % 10;
-    number = number / 10;
-    Console.WriteLine(number1);
-    int[] array = new int[3];           // Создаем массив чисел с длиной 3
-    array = new int[array.Length + 1];
-    int index = 0;
-    array[index] = number1;
-    index++;
-    Console.WriteLine(array);
+    Console.WriteLine($"Третья цифра числа {number} является {number[2]}");
 }
-
